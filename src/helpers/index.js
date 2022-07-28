@@ -1,4 +1,4 @@
-import { INPUT_FIELDS, INPUT_FIELD_DETAILS } from "../constants";
+import { INPUT_FIELDS, INPUT_FIELD_DETAILS, PAGES } from "../constants";
 
 const getInitialStateForInputFields = () => {
     const state = {};
@@ -19,4 +19,9 @@ const isEmpty = (value) => {
     return false;
 }
 
-export { getInitialStateForInputFields, isEmpty };
+const isLastPage = (currentPage) => {
+    const pages = Object.values(PAGES);
+    return pages.indexOf(currentPage) === pages.length - 1;
+}
+
+export { getInitialStateForInputFields, isEmpty, isLastPage };

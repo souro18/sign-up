@@ -1,16 +1,17 @@
 import React from 'react';
-import { INPUT_FIELDS, INPUT_FIELD_DETAILS, INPUT_TYPES, PAGES } from '../constants';
+import { INPUT_FIELDS, INPUT_FIELD_DETAILS, INPUT_TYPES } from '../constants';
+import { isLastPage } from '../helpers';
 import InputBox from './InputBox';
 import RadioCard from './RadioCard';
 
 const PageDetails = ({ details = {}, onInputChange, inputFields, currentPage }) => {
-    const isLastPage = currentPage === PAGES.FOUR;
-    const title = isLastPage ? `${details.title} ${inputFields[INPUT_FIELDS.USER_NAME].value}!` :
+    const lastPage = isLastPage(currentPage);
+    const title = lastPage ? `${details.title} ${inputFields[INPUT_FIELDS.USER_NAME].value}!` :
     details.title;
     return (<div>
         <div className='heading-wrapper'>
         {
-            isLastPage ?
+            lastPage ?
             <div className="check-circle">
                 <span className="material-icons md-24">check</span>
             </div> : null

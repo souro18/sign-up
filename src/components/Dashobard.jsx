@@ -35,7 +35,7 @@ const Dashboard = () => {
 
     return (<div>
         <Header />
-        <PaginationProgressBar />
+        <PaginationProgressBar currentPage={selectedPage}/>
         <PageDetails details={selectedPageDetails} onInputChange={onInputChange} inputFields={inputFields} currentPage={selectedPage}/>
         <div className='form-container'>
             <Button disabled={disableActionButton()} label={selectedPageDetails?.actionLabel} onClick={onButtonClick} currentPage={selectedPage}/>

@@ -68,7 +68,6 @@ input {
   background-color: #664de6;
   color: white;
   border-radius: 4px;
-  /* min-width: 250px; */
   cursor: pointer;
   display: flex;
   flex: 1;
@@ -78,4 +77,31 @@ input {
 .btn.disabled {
   background-color: #596276;
   cursor: not-allowed;
+}
+
+.radio-card-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.radio-card {
+  border: 1px solid #dfe1e4;
+  border-radius: 4px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-basis: 38%
+}
+
+.radio-card .description {
+  font-size: 14px;
+}
+
+.radio-card.selected {
+  border-color: #664de6;
+}
+
+label span {
+  color: #7b879d;
 }

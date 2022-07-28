@@ -2,7 +2,7 @@ import React from 'react';
 
 const InputBox = ({ details , inputField, onInputChange}) => {
     return (<div className='input-group'>
-        <label>{details.label}</label>
+        <label>{details.label}{!details.isRequired ? <span>(optional)</span> : null}</label>
         {
             details.prefixText?.length > 0 ?
             <div className="prefix-wrapper">

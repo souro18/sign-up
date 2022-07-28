@@ -83,7 +83,7 @@ const PAGE_DETAILS = {
         inputFields: [INPUT_FIELDS.USAGE_TYPE],
         actionLabel: 'Create Workspace',
     },
-    [PAGES.TWO]: {
+    [PAGES.FOUR]: {
         stepIndex: 4,
         title: 'Congratulations, ',
         description: 'You have completed onboarding, you can start using Eden!',

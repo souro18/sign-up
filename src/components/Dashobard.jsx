@@ -7,8 +7,8 @@ import PageDetails from './PageDetails';
 import PaginationProgressBar from './PaginationProgressBar';
 
 const Dashboard = () => {
-    const [selectedPage, setSelectedPage] = useState(PAGES.ONE);
-    const [selectedPageDetails, setSelectedPageDetails] = useState(PAGE_DETAILS[PAGES.ONE]);
+    const [selectedPage, setSelectedPage] = useState(PAGES.TWO);
+    const [selectedPageDetails, setSelectedPageDetails] = useState(PAGE_DETAILS[PAGES.TWO]);
     const [inputFields, setInputFields] = useState(getInitialStateForInputFields());
 
     console.log(selectedPage, selectedPageDetails)
@@ -31,7 +31,14 @@ const Dashboard = () => {
     }
 
     const onButtonClick = (currentPage) => {
-
+        console.log(currentPage);
+        if(currentPage === PAGES.FOUR) {
+            alert('form submitted');
+        } else {
+            const nextPage = currentPage + 1;
+            setSelectedPage(nextPage);
+            setSelectedPageDetails(PAGE_DETAILS[nextPage]);
+        }
     }    
     return (<div>
         <Header />

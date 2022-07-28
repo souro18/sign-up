@@ -12,7 +12,7 @@
 }
 
 .heading-wrapper {
-  margin-bottom: 30px;
+  margin-bottom: 45px;
   text-align: center;
 }
 
@@ -40,6 +40,26 @@ input {
   border: 1px solid #dfe1e4;
   outline-color: #664de6;
   border-radius: 4px;
+}
+
+.prefix-wrapper {
+  display: flex;
+  flex: 1;
+  border: 1px solid #dfe1e4;
+  border-radius: 4px;
+}
+
+.prefix-wrapper input {
+  border: none;
+  flex: 1;
+}
+
+.input-prefix {
+  border-right:  1px solid #dfe1e4;
+  padding: 8px;
+  background-color: #F8F9FC;
+  color: #7b879d;
+  font-size: 14px;
 }
 
 .btn {

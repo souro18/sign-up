@@ -44,10 +44,12 @@ const INPUT_FIELD_DETAILS = {
         isRequired: true,
         options: [{
             value: 'self',
+            icon: 'person',
             title: 'For myself',
             description: 'Write better. Think more clearly. Stay organized'
         }, {
             value: 'group',
+            icon: 'groups',
             title: 'With my team',
             description: 'wikies docs, task & projects, all in one place'
         }]
@@ -64,7 +66,7 @@ const PAGES = {
 const PAGE_DETAILS = {
     [PAGES.ONE]: {
         stepIndex: 1,
-        title: 'Welcome! Fiirst thing first....',
+        title: 'Welcome! First thing first....',
         description: 'You can always change that later',
         inputFields: [INPUT_FIELDS.FULL_NAME, INPUT_FIELDS.USER_NAME],
         actionLabel: 'Create Workspace',

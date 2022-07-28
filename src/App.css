@@ -2,6 +2,19 @@
  margin: 0px;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+}
+
+.header img {
+  max-width: 32px;
+  height: auto;
+  margin-right: 8px;
+}
+
 .title {
   color: #151b28;
 }
@@ -12,8 +25,10 @@
 }
 
 .heading-wrapper {
-  margin-bottom: 45px;
-  text-align: center;
+  margin: 0px 16px 45px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-container {
@@ -40,6 +55,14 @@ input {
   border: 1px solid #dfe1e4;
   outline-color: #664de6;
   border-radius: 4px;
+}
+
+.blue {
+  color: #664de6;
+}
+
+.grey {
+  color: #596276;
 }
 
 .prefix-wrapper {
@@ -104,4 +127,16 @@ input {
 
 label span {
   color: #7b879d;
+}
+
+.check-circle {
+  background-color: #664de6;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 50%;
+  margin-bottom: 30px;
 }

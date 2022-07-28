@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { INPUT_FIELD_DETAILS, PAGES, PAGE_DETAILS } from '../constants';
 import { getInitialStateForInputFields, isEmpty } from '../helpers';
 import Button from './Button';
@@ -7,16 +7,9 @@ import PageDetails from './PageDetails';
 import PaginationProgressBar from './PaginationProgressBar';
 
 const Dashboard = () => {
-    const [selectedPage, setSelectedPage] = useState(PAGES.TWO);
-    const [selectedPageDetails, setSelectedPageDetails] = useState(PAGE_DETAILS[PAGES.TWO]);
+    const [selectedPage, setSelectedPage] = useState(PAGES.ONE);
+    const [selectedPageDetails, setSelectedPageDetails] = useState(PAGE_DETAILS[PAGES.ONE]);
     const [inputFields, setInputFields] = useState(getInitialStateForInputFields());
-
-    console.log(selectedPage, selectedPageDetails)
-
-    // useEffect(() => {
-    //     // setSelectedPage(PAGES.ONE);
-    //     // setSelectedPageDetails(PAGE_DETAILS[PAGES.ONE])
-    // }, []);
 
     const onInputChange = useCallback((inputFieldType, value) => {
         const newInputField = { ...inputFields };
@@ -31,7 +24,6 @@ const Dashboard = () => {
     }
 
     const onButtonClick = (currentPage) => {
-        console.log(currentPage);
         if(currentPage === PAGES.FOUR) {
             alert('form submitted');
         } else {
@@ -39,11 +31,12 @@ const Dashboard = () => {
             setSelectedPage(nextPage);
             setSelectedPageDetails(PAGE_DETAILS[nextPage]);
         }
-    }    
+    };
+
     return (<div>
         <Header />
         <PaginationProgressBar />
-        <PageDetails details={selectedPageDetails} onInputChange={onInputChange} inputFields={inputFields}/>
+        <PageDetails details={selectedPageDetails} onInputChange={onInputChange} inputFields={inputFields} currentPage={selectedPage}/>
         <div className='form-container'>
             <Button disabled={disableActionButton()} label={selectedPageDetails?.actionLabel} onClick={onButtonClick} currentPage={selectedPage}/>
         </div>
